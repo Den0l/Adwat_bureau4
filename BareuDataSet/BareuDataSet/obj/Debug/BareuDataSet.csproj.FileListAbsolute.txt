@@ -1,0 +1,15 @@
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\bin\Debug\BareuDataSet.exe.config
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\bin\Debug\BareuDataSet.exe
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\bin\Debug\BareuDataSet.pdb
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet.csproj.AssemblyReference.cache
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\MainWindow.g.cs
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\App.g.cs
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet_MarkupCompile.cache
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet_MarkupCompile.lref
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\MainWindow.baml
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet.g.resources
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet.Properties.Resources.resources
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet.csproj.GenerateResource.cache
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet.csproj.CoreCompileInputs.cache
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet.exe
+C:\Projects\UchebPrakt\BareuDataSet\BareuDataSet\obj\Debug\BareuDataSet.pdb

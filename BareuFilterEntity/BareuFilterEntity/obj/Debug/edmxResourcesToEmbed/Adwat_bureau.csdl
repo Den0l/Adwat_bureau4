@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Adwat_bureauModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="ID_Client" />
+    </Key>
+    <Property Name="ID_Client" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClientMiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="СourtСases_ID" Type="Int32" />
+    <NavigationProperty Name="СourtСasesTable" Relationship="Self.FK__Clients__СourtСa__70DDC3D8" FromRole="Clients" ToRole="СourtСasesTable" />
+    <NavigationProperty Name="Lawyer" Relationship="Self.FK__Lawyer__Client_I__06CD04F7" FromRole="Clients" ToRole="Lawyer" />
+  </EntityType>
+  <EntityType Name="DiplomaUniversityTable">
+    <Key>
+      <PropertyRef Name="ID_DiplomaUniversity" />
+    </Key>
+    <Property Name="ID_DiplomaUniversity" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DiplomaUniversity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Lawyer" Relationship="Self.FK__Lawyer__DiplomaU__05D8E0BE" FromRole="DiplomaUniversityTable" ToRole="Lawyer" />
+  </EntityType>
+  <EntityType Name="Lawyer">
+    <Key>
+      <PropertyRef Name="ID_Lawyer" />
+    </Key>
+    <Property Name="ID_Lawyer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LawyerSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LawyerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LawyerMiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Seniority" Type="Int32" Nullable="false" />
+    <Property Name="DiplomaUniversity_ID" Type="Int32" />
+    <Property Name="Client_ID" Type="Int32" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK__Lawyer__Client_I__06CD04F7" FromRole="Lawyer" ToRole="Clients" />
+    <NavigationProperty Name="DiplomaUniversityTable" Relationship="Self.FK__Lawyer__DiplomaU__05D8E0BE" FromRole="Lawyer" ToRole="DiplomaUniversityTable" />
+  </EntityType>
+  <EntityType Name="СourtСasesTable">
+    <Key>
+      <PropertyRef Name="ID_CourtCases" />
+    </Key>
+    <Property Name="ID_CourtCases" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="СourtСases" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK__Clients__СourtСa__70DDC3D8" FromRole="СourtСasesTable" ToRole="Clients" />
+  </EntityType>
+  <Association Name="FK__Clients__СourtСa__70DDC3D8">
+    <End Role="СourtСasesTable" Type="Self.СourtСasesTable" Multiplicity="0..1" />
+    <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СourtСasesTable">
+        <PropertyRef Name="ID_CourtCases" />
+      </Principal>
+      <Dependent Role="Clients">
+        <PropertyRef Name="СourtСases_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lawyer__Client_I__06CD04F7">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="0..1" />
+    <End Role="Lawyer" Type="Self.Lawyer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="ID_Client" />
+      </Principal>
+      <Dependent Role="Lawyer">
+        <PropertyRef Name="Client_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lawyer__DiplomaU__05D8E0BE">
+    <End Role="DiplomaUniversityTable" Type="Self.DiplomaUniversityTable" Multiplicity="0..1" />
+    <End Role="Lawyer" Type="Self.Lawyer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DiplomaUniversityTable">
+        <PropertyRef Name="ID_DiplomaUniversity" />
+      </Principal>
+      <Dependent Role="Lawyer">
+        <PropertyRef Name="DiplomaUniversity_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Adwat_bureauEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="DiplomaUniversityTable" EntityType="Self.DiplomaUniversityTable" />
+    <EntitySet Name="Lawyer" EntityType="Self.Lawyer" />
+    <EntitySet Name="СourtСasesTable" EntityType="Self.СourtСasesTable" />
+    <AssociationSet Name="FK__Clients__СourtСa__70DDC3D8" Association="Self.FK__Clients__СourtСa__70DDC3D8">
+      <End Role="СourtСasesTable" EntitySet="СourtСasesTable" />
+      <End Role="Clients" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lawyer__Client_I__06CD04F7" Association="Self.FK__Lawyer__Client_I__06CD04F7">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Lawyer" EntitySet="Lawyer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lawyer__DiplomaU__05D8E0BE" Association="Self.FK__Lawyer__DiplomaU__05D8E0BE">
+      <End Role="DiplomaUniversityTable" EntitySet="DiplomaUniversityTable" />
+      <End Role="Lawyer" EntitySet="Lawyer" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

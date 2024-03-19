@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BareuFilterEntity", "BareuFilterEntity\BareuFilterEntity.csproj", "{25F06C00-EAF5-4BBA-A2BA-CC3635CF8DEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25F06C00-EAF5-4BBA-A2BA-CC3635CF8DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F06C00-EAF5-4BBA-A2BA-CC3635CF8DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F06C00-EAF5-4BBA-A2BA-CC3635CF8DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F06C00-EAF5-4BBA-A2BA-CC3635CF8DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0859A5BB-F912-4224-BCC6-CD04852BE52C}
+	EndGlobalSection
+EndGlobal
